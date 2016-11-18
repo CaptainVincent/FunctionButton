@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -11,7 +5,10 @@ import {
   Text,
   View
 } from 'react-native';
+
 import Button from './components/Button';
+import * as Animatable from 'react-native-animatable';
+const AnimatableButton = Animatable.createAnimatableComponent(Button);
 
 
 export default class Main extends Component {
@@ -28,10 +25,12 @@ export default class Main extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
-        <Button name={"circle-with-plus"}
-                size={50}
-                color={"#000000"}
-                style={styles.button}/>
+        <AnimatableButton name={"circle-with-plus"}
+                          size={50}
+                          color={"#000000"}
+                          style={styles.button}
+                          animation={"bounceInUp"}
+                          duration={800}/>
       </View>
     );
   }
