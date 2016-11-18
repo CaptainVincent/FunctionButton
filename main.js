@@ -11,9 +11,8 @@ import {
   Text,
   View
 } from 'react-native';
+import Button from './components/Button';
 
-import Icon from 'react-native-vector-icons/Entypo';
-const myIcon = (<Icon name="circle-with-plus" size={50} color="#000000" />)
 
 export default class Main extends Component {
   render() {
@@ -29,7 +28,10 @@ export default class Main extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
-        {myIcon}
+        <Button name={"circle-with-plus"}
+                size={50}
+                color={"#000000"}
+                style={styles.button}/>
       </View>
     );
   }
@@ -39,7 +41,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
@@ -51,6 +52,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  button: {
+    position: 'absolute',
+    top: 200,
+    left: 30,
   },
 });
 ;
